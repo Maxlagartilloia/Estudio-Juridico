@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudio Jurídico Álvarez & Asociados | Defensa Legal Profesional</title>
+  <meta name="description" content="Estudio Jurídico Álvarez & Asociados. Defensa legal profesional en Derecho Penal, Civil, Laboral y de Familia. Atención inmediata, asesoría personalizada y resultados comprobados.">
+  <meta name="keywords" content="abogados, estudio jurídico, defensa penal, abogado laboral, abogado de familia, abogados en Ecuador">
+  <meta name="author" content="Estudio Jurídico Álvarez & Asociados">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Estilos adicionales -->
+  <style>
+    /* Fondo tipo glassmorphism en el hero */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .btn-primary {
+      @apply px-6 py-3 rounded-full font-semibold text-sm md:text-base;
+      background: linear-gradient(135deg, #facc15, #eab308);
+      color: #0f172a;
+      box-shadow: 0 10px 25px rgba(250, 204, 21, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(250, 204, 21, 0.55);
+    }
+
+    .btn-outline {
+      @apply px-6 py-3 rounded-full font-semibold text-sm md:text-base border;
+      border-color: rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+      background: transparent;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: #facc15;
+      color: #facc15;
+    }
+
+    .badge {
+      @apply inline-flex items-center gap-2 text-xs md:text-sm font-medium px-3 py-1 rounded-full;
+      background: rgba(15, 23, 42, 0.85);
+      color: #facc15;
+      border: 1px solid rgba(250, 204, 21, 0.5);
+    }
+
+    .section-title {
+      @apply text-2xl md:text-3xl font-bold tracking-tight;
+    }
+
+    .section-subtitle {
+      @apply text-sm md:text-base text-slate-300 max-w-2xl;
+    }
+
+    .card {
+      @apply rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-7;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+    }
+
+    .cta-pulse {
+      animation: pulse-soft 1.8s infinite;
+    }
+
+    @keyframes pulse-soft {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.55);
+      }
+      70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 18px rgba(250, 204, 21, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+      }
+    }
+
+    /* Contenedor responsive para el mapa */
+    .map-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased">
+  <!-- Fondo degradado -->
+  <div class="fixed inset-0 -z-10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
+  <div class="fixed inset-0 -z-10 opacity-60" style="background-image: radial-gradient(circle at 0 0, rgba(250,204,21,0.12) 0, transparent 55%), radial-gradient(circle at 100% 0, rgba(59,130,246,0.18) 0, transparent 55%);"></div>
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+      <!-- Logo + nombre -->
+      <a href="#inicio" class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center text-xs font-bold tracking-tight">
+          <span class="text-amber-300">A&A</span>
+        </div>
+        <div class="flex flex-col leading-tight">
+          <span class="font-semibold text-sm md:text-base">Estudio Jurídico</span>
+          <span class="font-bold text-base md:text-lg text-amber-300 tracking-tight">Álvarez &amp; Asociados</span>
+        </div>
+      </a>
+
+      <!-- Navegación -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#confianza" class="hover:text-amber-300 transition-colors">Por qué elegirnos</a>
+        <a href="#servicios" class="hover:text-amber-300 transition-colors">Servicios</a>
+        <a href="#testimonios" class="hover:text-amber-300 transition-colors">Testimonios</a>
+        <a href="#nosotros" class="hover:text-amber-300 transition-colors">Nosotros</a>
+        <a href="#contacto" class="hover:text-amber-300 transition-colors">Contacto</a>
+      </nav>
+
+      <!-- CTA Header -->
+      <div class="flex items-center gap-2">
+        <a href="#contacto" class="hidden md:inline-flex btn-outline text-xs md:text-sm">
+          Enviar mensaje
+        </a>
+        <a href="https://wa.me/593999999999?text=Quiero%20agendar%20una%20consulta%20legal" target="_blank" class="btn-primary text-xs md:text-sm">
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="inicio" class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-20 space-y-20 md:space-y-28">
+
+    <!-- HERO -->
+    <section class="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+      <!-- Columna izquierda -->
+      <div class="space-y-6">
+        <span class="badge">
+          <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
+          Defensa legal inmediata &middot; Primera consulta agendada
+        </span>
+
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+          Defensa legal con <span class="text-amber-300">resultados reales</span> para proteger lo que más importa.
+        </h1>
+
+        <p class="text-sm md:text-base text-slate-200 leading-relaxed max-w-xl">
+          Álvarez &amp; Asociados es un estudio jurídico con más de <span class="font-semibold text-amber-200">15 años de experiencia</span> en Derecho Penal, Civil, Laboral y de Familia. 
+          Combinamos estrategia, ética y acompañamiento humano para que nunca enfrentes tu caso en soledad.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+          <a href="#contacto" class="btn-primary cta-pulse">
+            Agendar consulta legal
+          </a>
+          <button onclick="document.getElementById('confianza').scrollIntoView({behavior: 'smooth'});" class="btn-outline">
+            Ver por qué elegirnos
+          </button>
+        </div>
+
+        <div class="flex flex-wrap gap-4 text-xs md:text-sm text-slate-300">
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            <span>Más de 1.200 casos atendidos</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-amber-300"></span>
+            <span>Atención inmediata y confidencial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha (tarjeta glass) -->
+      <div class="glass-card rounded-3xl p-6 md:p-8 shadow-2xl border border-amber-100/10">
+        <p class="text-xs uppercase tracking-[0.2em] text-amber-200 mb-3">Áreas clave del estudio</p>
+
+        <div class="grid grid-cols-2 gap-4 text-xs md:text-sm">
+          <div class="card bg-slate-900/60 border-slate-800">
+            <p class="font-semibold mb-1">Derecho Penal</p>
+            <p class="text-slate-300 text-xs">
+              Defensa urgente en detenciones, audiencias y procesos penales complejos.
+            </p>
+          </div>
+          <div class="card bg-slate-900/60 border-slate-800">
+            <p class="font-semibold mb-1">Derecho de Familia</p>
+            <p class="text-slate-300 text-xs">
+              Divorcios, pensiones, tenencia y medidas de protección con enfoque humano.
+            </p>
+          </div>
+          <div class="card bg-slate-900/60 border-slate-800">
+            <p class="font-semibold mb-1">Derecho Laboral</p>
+            <p class="text-slate-300 text-xs">
+              Despidos, liquidaciones e indemnizaciones para trabajadores y empresas.
+            </p>
+          </div>
+          <div class="card bg-slate-900/60 border-slate-800">
+            <p class="font-semibold mb-1">Derecho Civil</p>
+            <p class="text-slate-300 text-xs">
+              Contratos, deudas, herencias y protección de tu patrimonio.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 border-t border-slate-800 pt-4 text-xs md:text-sm text-slate-200 space-y-1">
+          <p class="font-semibold text-slate-50">Horario de atención</p>
+          <p>Lunes a Viernes: 08h30 a 18h30</p>
+          <p>Sábados: 09h00 a 13h00 (bajo cita)</p>
+          <p class="text-slate-400">Dirección: Av. República 123 y Calle Justicia, Quito, Ecuador</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONFIANZA -->
+    <section id="confianza" class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h2 class="section-title">
+            ¿Por qué confiar tu caso a Álvarez &amp; Asociados?
+          </h2>
+          <p class="section-subtitle mt-2">
+            Entendemos que detrás de cada proceso legal hay historias, familias y decisiones que marcan el futuro. 
+            Por eso combinamos experiencia jurídica, estrategia procesal y acompañamiento cercano en cada etapa del camino.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card">
+          <p class="text-sm font-semibold text-amber-300 mb-2">Resultados comprobados</p>
+          <p class="text-sm text-slate-200">
+            Más de <span class="font-semibold">1.200 casos atendidos</span> en distintas áreas del derecho, con resoluciones favorables en procesos penales, laborales, civiles y de familia.
+          </p>
+        </div>
+        <div class="card">
+          <p class="text-sm font-semibold text-amber-300 mb-2">Acompañamiento humano</p>
+          <p class="text-sm text-slate-200">
+            Explicamos cada paso del proceso con lenguaje claro, sin tecnicismos innecesarios, para que tomes decisiones informadas con tranquilidad.
+          </p>
+        </div>
+        <div class="card">
+          <p class="text-sm font-semibold text-amber-300 mb-2">Transparencia total</p>
+          <p class="text-sm text-slate-200">
+            Honorarios claros desde el inicio, acuerdos por escrito y comunicación constante sobre el avance de tu caso.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h2 class="section-title">
+            Áreas de práctica jurídica
+          </h2>
+          <p class="section-subtitle mt-2">
+            Brindamos defensa y asesoría legal integral tanto a personas naturales como a empresas, con estrategias hechas a la medida de cada caso.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Penal -->
+        <article class="card space-y-3">
+          <h3 class="text-xl font-semibold">Derecho Penal</h3>
+          <p class="text-sm text-slate-200">
+            Actuación inmediata en detenciones, audiencias de flagrancia, medidas sustitutivas, apelaciones y procesos penales complejos. 
+            Protegemos tus derechos desde el primer momento para evitar errores irreversibles.
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Asistencia inmediata en caso de detención.</li>
+            <li>Defensa en audiencias y juicios orales.</li>
+            <li>Recursos de apelación y casación.</li>
+          </ul>
+          <a href="#contacto" class="inline-flex mt-2 btn-outline">
+            Solicitar defensa penal
+          </a>
+        </article>
+
+        <!-- Familia -->
+        <article class="card space-y-3">
+          <h3 class="text-xl font-semibold">Derecho de Familia</h3>
+          <p class="text-sm text-slate-200">
+            Te acompañamos en procesos de divorcio, pensiones alimenticias, tenencia, régimen de visitas y medidas de protección, siempre priorizando el bienestar emocional de todos los involucrados.
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Divorcios de mutuo acuerdo y contenciosos.</li>
+            <li>Pensiones alimenticias y reajustes.</li>
+            <li>Tenencia y régimen de visitas.</li>
+          </ul>
+          <a href="#contacto" class="inline-flex mt-2 btn-outline">
+            Agenda una consulta familiar
+          </a>
+        </article>
+
+        <!-- Laboral -->
+        <article class="card space-y-3">
+          <h3 class="text-xl font-semibold">Derecho Laboral</h3>
+          <p class="text-sm text-slate-200">
+            Defendemos tus derechos en casos de despido intempestivo, liquidaciones mal calculadas, acoso laboral y conflictos entre empleador y trabajador.
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Revisión de liquidaciones e indemnizaciones.</li>
+            <li>Demandas por despido intempestivo.</li>
+            <li>Asesoría para empresas en cumplimiento laboral.</li>
+          </ul>
+          <a href="#contacto" class="inline-flex mt-2 btn-outline">
+            Solicitar asesoría laboral
+          </a>
+        </article>
+
+        <!-- Civil -->
+        <article class="card space-y-3">
+          <h3 class="text-xl font-semibold">Derecho Civil &amp; Patrimonial</h3>
+          <p class="text-sm text-slate-200">
+            Protegemos tu patrimonio mediante contratos claros, gestión de deudas, recuperación de cartera, herencias y conflictos de propiedad.
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Contratos civiles y comerciales.</li>
+            <li>Herencias, sucesiones y particiones.</li>
+            <li>Reclamaciones por deudas y daños.</li>
+          </ul>
+          <a href="#contacto" class="inline-flex mt-2 btn-outline">
+            Hablar con un abogado civil
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="space-y-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="section-title">
+          Lo que dicen nuestros clientes
+        </h2>
+        <p class="section-subtitle mt-2 mx-auto">
+          Cada testimonio representa una historia real de personas y familias que confiaron en nosotros 
+          en momentos decisivos de su vida.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 items-stretch">
+        <!-- Testimonio 1 -->
+        <div class="card flex flex-col justify-between text-center">
+          <p class="text-sm text-slate-200 italic mb-4">
+            “Tenía miedo de perder la custodia de mis hijos. Me explicaron cada paso con paciencia, 
+            me acompañaron a todas las audiencias y hoy tengo un acuerdo justo y estable para mi familia.”
+          </p>
+          <div class="mt-3">
+            <p class="font-semibold text-sm">María G.</p>
+            <p class="text-xs text-slate-400">Caso de Derecho de Familia</p>
+          </div>
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div class="card flex flex-col justify-between text-center">
+          <p class="text-sm text-slate-200 italic mb-4">
+            “Fui despedido sin explicación. El estudio revisó mi liquidación, demostró las irregularidades 
+            y logramos una indemnización completa. Me sentí acompañado en todo momento.”
+          </p>
+          <div class="mt-3">
+            <p class="font-semibold text-sm">José A.</p>
+            <p class="text-xs text-slate-400">Caso de Derecho Laboral</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA INTERMEDIO -->
+    <section class="rounded-3xl glass-card p-7 md:p-9 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 md:space-y-3">
+        <h2 class="text-2xl md:text-3xl font-bold">
+          Tu caso no puede esperar.
+        </h2>
+        <p class="text-sm md:text-base text-slate-200 max-w-xl">
+          Un buen abogado marca la diferencia cuando actúa a tiempo. 
+          Cuéntanos qué está pasando y diseñaremos contigo la mejor estrategia legal.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+        <a href="#contacto" class="btn-primary cta-pulse w-full text-center">
+          Agendar consulta legal
+        </a>
+        <a href="tel:+593999999999" class="btn-outline w-full text-center">
+          Llamar al estudio
+        </a>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="space-y-8">
+      <div class="grid md:grid-cols-[1.3fr,1fr] gap-8 items-start">
+        <div>
+          <h2 class="section-title">
+            Sobre Álvarez &amp; Asociados
+          </h2>
+          <p class="section-subtitle mt-2">
+            Somos un estudio jurídico que cree en una abogacía cercana, honesta y profundamente humana. 
+            Sabemos que detrás de cada expediente hay una vida, y por eso cada caso lo tratamos con la 
+            seriedad y el respeto que merece.
+          </p>
+
+          <div class="mt-5 space-y-3 text-sm text-slate-200">
+            <p>
+              Nuestra experiencia abarca más de <span class="font-semibold text-amber-200">15 años</span> en litigios y asesoría legal, con un equipo de abogados 
+              especializados en distintas ramas del derecho. Trabajamos de forma coordinada para ofrecerte soluciones 
+              integrales y sostenibles en el tiempo.
+            </p>
+            <p>
+              Creemos en la estrategia, pero también en la claridad. Por eso explicamos cada paso del proceso, 
+              traducimos el lenguaje jurídico y te acompañamos en las decisiones importantes que marcarán tu futuro.
+            </p>
+          </div>
+        </div>
+
+        <!-- "Foto" / Tarjeta del abogado principal -->
+        <div class="card flex flex-col items-center text-center gap-4">
+          <div class="h-20 w-20 rounded-full border border-amber-200/60 bg-slate-900 flex items-center justify-center text-2xl font-bold text-amber-200">
+            ÁA
+          </div>
+          <div>
+            <p class="font-semibold text-base">Dr. Carlos Álvarez</p>
+            <p class="text-xs text-slate-400">Director del Estudio Jurídico</p>
+          </div>
+          <p class="text-sm text-slate-200">
+            Abogado litigante, especialista en Derecho Penal y Constitucional. 
+            Conferencista y asesor jurídico de empresas, con amplia experiencia en casos de alta complejidad.
+          </p>
+          <div class="text-xs text-slate-400 space-y-1">
+            <p>Registro profesional N.° 12345 - Consejo de la Judicatura</p>
+            <p>Miembro de la Asociación de Abogados del Ecuador</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPA + CONTACTO -->
+    <section id="contacto" class="space-y-10">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="section-title">
+          Contáctanos y evalúa tu caso
+        </h2>
+        <p class="section-subtitle mt-2 mx-auto">
+          Cuéntanos brevemente tu situación y te responderemos con las opciones legales más adecuadas para tu caso.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <!-- Formulario -->
+        <div class="card">
+          <form action="#" method="POST" class="space-y-4 text-sm">
+            <div>
+              <label for="nombre" class="block mb-1 text-slate-200">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" required
+                     class="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="telefono" class="block mb-1 text-slate-200">Teléfono / WhatsApp</label>
+                <input id="telefono" name="telefono" type="tel" required
+                       class="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300">
+              </div>
+              <div>
+                <label for="email" class="block mb-1 text-slate-200">Correo electrónico</label>
+                <input id="email" name="email" type="email" required
+                       class="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300">
+              </div>
+            </div>
+
+            <div>
+              <label for="tipo" class="block mb-1 text-slate-200">Tipo de servicio legal</label>
+              <select id="tipo" name="tipo"
+                      class="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300">
+                <option value="">Selecciona una opción</option>
+                <option value="penal">Derecho Penal</option>
+                <option value="familia">Derecho de Familia</option>
+                <option value="laboral">Derecho Laboral</option>
+                <option value="civil">Derecho Civil &amp; Patrimonial</option>
+                <option value="otros">Otro tipo de consulta</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="detalles" class="block mb-1 text-slate-200">Cuéntanos brevemente tu caso</label>
+              <textarea id="detalles" name="detalles" rows="4" required
+                        class="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300"
+                        placeholder="No es necesario incluir datos sensibles en esta primera consulta."></textarea>
+            </div>
+
+            <div>
+              <label for="urgencia" class="block mb-1 text-slate-200">Urgencia del caso</label>
+              <select id="urgencia" name="urgencia"
+                      class="w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 outline-none focus:border-amber-300 focus:ring-1 focus:ring-amber-300">
+                <option value="">Selecciona una opción</option>
+                <option value="inmediata">Inmediata (detención, audiencia próxima, plazo corto)</option>
+                <option value="corto_plazo">En los próximos días</option>
+                <option value="planificacion">Estoy planificando acciones legales</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-primary cta-pulse w-full justify-center">
+              Enviar información para evaluación
+            </button>
+
+            <p class="text-[11px] text-slate-400 mt-2">
+              La información enviada es confidencial y será revisada únicamente por el equipo legal del estudio.
+            </p>
+          </form>
+        </div>
+
+        <!-- Mapa -->
+        <div class="space-y-4 text-sm">
+          <div class="map-container">
+            <!-- Reemplaza el src con el mapa exacto de la dirección del cliente -->
+            <iframe 
+              loading="lazy" 
+              allowfullscreen 
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.9674131953437!2d-78.4910605!3d-0.1859880!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59985b9e8e9c7%3A0x1234567890abcdef!2sQuito%2C%20Ecuador!5e0!3m2!1ses-419!2sec!4v1700000000000">
+            </iframe>
+          </div>
+
+          <div class="card bg-slate-900/70 border-slate-800">
+            <p class="font-semibold text-slate-50 mb-1">Dirección del estudio</p>
+            <p class="text-slate-200">
+              Av. República 123 y Calle Justicia<br>
+              Quito, Ecuador
+            </p>
+            <div class="grid grid-cols-2 gap-3 mt-4 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100">Teléfono / WhatsApp</p>
+                <p>+593 99 999 9999</p>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100">Correo electrónico</p>
+                <p>contacto@alvarezasociados.com</p>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100">Horario</p>
+                <p>Lun - Vie: 08h30 - 18h30</p>
+                <p>Sáb: 09h00 - 13h00</p>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100">Redes sociales</p>
+                <p>@alvarezasociados</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/70 bg-slate-950/90">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] md:text-xs text-slate-400">
+      <p>
+        © <span id="year"></span> Estudio Jurídico Álvarez &amp; Asociados. Todos los derechos reservados.
+      </p>
+      <p class="text-slate-500">
+        Defensa legal profesional &middot; Confidencialidad &middot; Ética &middot; Resultados
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
